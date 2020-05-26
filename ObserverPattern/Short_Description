@@ -1,0 +1,17 @@
+Subject -> Observable Interface
+
+Field -> # Concrete Subject. 
+         # runs,wickets,overs are the states which will be frequently changed. 
+         # in hasChanged() method, we'll manually input value of runs,wickets and overs for illustration.
+         # hasChanged() will be called from main() method. if hasChanged() is called,only then we can input the values of runs,wickets and overs.
+         # If these states changed, Field's dependend objects will be notified and updated automatically.
+
+Consumer -> Observer Interface
+
+CurrentScoreDisplay -> # Concrete consumer.
+                       # its update(runs,wickets,overs) method will be called by notify_all_observers() method of Field object.
+                       # it'll take the runs,wickets,overs parameters and will print the current values of these 3 attributes.
+
+PredictedScoreDisplay -> # Concrete consumer.
+                         # its update(runs,wickets,overs) method will be called by notify_all_observers() method of Field object.
+                         # it'll take the runs,wickets,overs parameters and will print the predicted scores based on these 3 attributes.
